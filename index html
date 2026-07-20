@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Warid | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Space Grotesk',sans-serif;
+    background:#FFF8E8;
+    color:#111;
+    line-height:1.6;
+}
+
+:root{
+    --yellow:#FFD84D;
+    --blue:#53A7FF;
+    --red:#FF5D73;
+    --green:#7DFF91;
+    --white:#ffffff;
+    --black:#111;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:var(--yellow);
+    border-bottom:4px solid var(--black);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:800;
+}
+
+nav ul{
+    display:flex;
+    gap:15px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--black);
+    font-weight:700;
+    padding:8px 14px;
+    border:3px solid var(--black);
+    background:white;
+    box-shadow:5px 5px 0 black;
+    transition:.15s;
+}
+
+nav a:hover{
+    transform:translate(5px,5px);
+    box-shadow:0 0 0 black;
+}
+
+section{
+    padding:90px 0;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:40px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:var(--green);
+    border:4px solid black;
+    padding:8px 14px;
+    font-weight:800;
+    box-shadow:6px 6px 0 black;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(2.8rem,8vw,5.5rem);
+    line-height:1;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.hero p{
+    font-size:1.15rem;
+    margin-bottom:30px;
+    max-width:650px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:black;
+    padding:16px 28px;
+    font-weight:800;
+    border:4px solid black;
+    box-shadow:8px 8px 0 black;
+    transition:.15s;
+}
+
+.primary{
+    background:var(--red);
+}
+
+.secondary{
+    background:var(--blue);
+}
+
+.btn:hover{
+    transform:translate(8px,8px);
+    box-shadow:0 0 0 black;
+}
+
+.hero-card{
+    background:var(--yellow);
+    border:5px solid black;
+    box-shadow:14px 14px 0 black;
+    padding:35px;
+}
+
+.avatar{
+    width:150px;
+    height:150px;
+    margin:auto;
+    background:var(--red);
+    border:5px solid black;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:4rem;
+    font-weight:800;
+}
+
+.hero-card h2{
+    margin-top:25px;
+    font-size:2rem;
+    text-align:center;
+}
+
+.hero-card p{
+    text-align:center;
+}
+
+.title{
+    display:inline-block;
+    margin-bottom:35px;
+    font-size:2.3rem;
+    font-weight:800;
+    background:var(--green);
+    border:4px solid black;
+    padding:10px 20px;
+    box-shadow:8px 8px 0 black;
+}
+
+.about-box{
+    background:white;
+    border:4px solid black;
+    box-shadow:10px 10px 0 black;
+    padding:30px;
+    font-size:1.08rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:var(--white);
+    border:4px solid black;
+    box-shadow:10px 10px 0 black;
+    padding:25px;
+    transition:.15s;
+    cursor:pointer;
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:1.35rem;
+}
+
+.card:hover{
+    transform:translate(10px,10px);
+    box-shadow:0 0 0 black;
+}
+
+.skill-icon{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.project:nth-child(1){
+    background:var(--blue);
+}
+
+.project:nth-child(2){
+    background:var(--yellow);
+}
+
+.project:nth-child(3){
+    background:var(--green);
+}
+
+.contact-box{
+    background:var(--red);
+    border:5px solid black;
+    box-shadow:12px 12px 0 black;
+    padding:35px;
+}
+
+.contact-list{
+    display:grid;
+    gap:15px;
+    margin-top:20px;
+}
+
+.contact-item{
+    background:white;
+    border:3px solid black;
+    padding:15px;
+    font-weight:700;
+}
+
+footer{
+    padding:40px 20px;
+    text-align:center;
+    font-weight:700;
+}
+
+.highlight{
+    color:var(--red);
+}
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero-card{
+order:-1;
+}
+
+nav{
+flex-direction:column;
+gap:20px;
+}
+
+nav ul{
+justify-content:center;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.btn{
+text-align:center;
+}
+
+.title{
+font-size:1.7rem;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">WARID</div>
+
+<ul>
+<li><a href="#about">Tentang</a></li>
+<li><a href="#skills">Skill</a></li>
+<li><a href="#projects">Proyek</a></li>
+<li><a href="#contact">Kontak</a></li>
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<section>
+
+<div class="container hero">
+
+<div>
+
+<div class="badge">👋 Halo, Selamat Datang!</div>
+
+<h1>Saya <span class="highlight">Warid</span>.</h1>
+
+<p>
+Seorang pengembang yang senang membangun website modern, cepat,
+responsif, dan memiliki tampilan yang unik. Portofolio ini menggunakan
+gaya <b>Neo-Brutalism</b> dengan warna kontras, border tebal, serta
+hard shadow yang khas.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn primary">Lihat Portofolio</a>
+<a href="#contact" class="btn secondary">Hubungi Saya</a>
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="avatar">W</div>
+
+<h2>Warid</h2>
+
+<p>Web Developer • Front-End Enthusiast • Creative Builder</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="container">
+
+<div class="title">Tentang Saya</div>
+
+<div class="about-box">
+
+<p>
+Saya memiliki minat dalam pengembangan website dengan fokus pada tampilan
+yang menarik, pengalaman pengguna yang nyaman, serta kode yang bersih.
+Saya senang mempelajari teknologi baru dan terus mengembangkan kemampuan
+dalam HTML, CSS, JavaScript, maupun framework modern.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="container">
+
+<div class="title">Skill & Keahlian</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="skill-icon">💻</div>
+<h3>HTML5</h3>
+<p>Membangun struktur website yang rapi dan semantik.</p>
+</div>
+
+<div class="card">
+<div class="skill-icon">🎨</div>
+<h3>CSS3</h3>
+<p>Responsive design, Flexbox, Grid, animasi, dan UI modern.</p>
+</div>
+
+<div class="card">
+<div class="skill-icon">⚡</div>
+<h3>JavaScript</h3>
+<p>Membuat website lebih interaktif dan dinamis.</p>
+</div>
+
+<div class="card">
+<div class="skill-icon">🚀</div>
+<h3>Responsive Design</h3>
+<p>Tampilan tetap optimal di desktop maupun smartphone.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="container">
+
+<div class="title">Proyek</div>
+
+<div class="grid">
+
+<div class="card project">
+<h3>Landing Page</h3>
+<p>
+Website modern dengan desain responsif untuk kebutuhan bisnis maupun
+produk digital.
+</p>
+</div>
+
+<div class="card project">
+<h3>Dashboard</h3>
+<p>
+Dashboard interaktif menggunakan JavaScript dengan tampilan sederhana
+dan cepat.
+</p>
+</div>
+
+<div class="card project">
+<h3>Portfolio Website</h3>
+<p>
+Website personal untuk menampilkan profil, skill, dan hasil karya.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<div class="title">Kontak</div>
+
+<div class="contact-box">
+
+<h2>Mari Berkolaborasi 🚀</h2>
+
+<div class="contact-list">
+
+<div class="contact-item">
+📧 Email : your@email.com
+</div>
+
+<div class="contact-item">
+📱 WhatsApp : +62 xxx xxxx xxxx
+</div>
+
+<div class="contact-item">
+🌐 Website : www.example.com
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© <span id="year"></span> Warid — Dibuat dengan HTML, CSS & JavaScript.
+
+</footer>
+
+<script>
+// Tahun otomatis
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Efek klik pada kartu
+document.querySelectorAll(".card").forEach(card=>{
+    card.addEventListener("click",()=>{
+        card.animate([
+            {transform:"scale(1) rotate(0deg)"},
+            {transform:"scale(1.05) rotate(-2deg)"},
+            {transform:"scale(1) rotate(0deg)"}
+        ],{
+            duration:250,
+            easing:"ease"
+        });
+    });
+});
+
+// Efek hover tombol menggunakan JavaScript
+document.querySelectorAll(".btn").forEach(btn=>{
+
+    btn.addEventListener("mouseenter",()=>{
+        btn.style.background="#7DFF91";
+    });
+
+    btn.addEventListener("mouseleave",()=>{
+
+        if(btn.classList.contains("primary")){
+            btn.style.background="#FF5D73";
+        }else{
+            btn.style.background="#53A7FF";
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>
