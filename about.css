@@ -1,0 +1,13 @@
+.fototengah{
+            border-radius: 50%;
+            border: 5px solid #0077b6;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+}
+img:hover{
+    color: #ffd60a;
+    transform:scale(1.1);
+}
+.dive{
+    padding: 20px;
+}
